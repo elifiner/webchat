@@ -1,8 +1,14 @@
+function onload() {
+}
+
 function submitMessage() {
-    text = document.getElementById('chatText').value;
+    text = document.getElementById("message").value;
     history = document.getElementById("history");
     item = document.createElement("p");
     item.innerHTML = text;
     history.appendChild(item);
-    document.getElementById("chatText").value = "";
+    history.scrollTop = history.scrollHeight;
+    document.getElementById("message").value = "";
 }
+
+onload();

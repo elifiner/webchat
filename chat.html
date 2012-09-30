@@ -1,13 +1,16 @@
+<!doctype html>
 <html>
   <head>
     <script type="text/javascript" src="chat.js"></script>
+    <link rel="stylesheet" type="text/css" href="chat.css">
   </head>
   <body>
     <div id="history">
     </div>
     <form action="javascript:submitMessage()">
-      <input id="chatText" type="textarea"></input>
-      <input type="submit"></input>
+      <input id="message" type="textarea"></input>
+      <script>document.getElementById("message").focus();</script>
+      <input value="Send" type="submit"></input>
     </form>
   </body>
 </html>
