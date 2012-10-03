@@ -5,12 +5,16 @@
     <link rel="stylesheet" type="text/css" href="chat.css">
   </head>
   <body>
-    <div id="history">
+    <div id="chat">
+      <div id="historyContainer">
+        <div id="history">
+        </div>
+      </div>
+      <form action="javascript:submitMessage()">
+        <div class="cell wide"><input id="message" type="text"></input></div>
+        <div class="cell"><input value="Send" type="submit"></input></div>
+      </form>
     </div>
-    <form action="javascript:submitMessage()">
-      <input id="message" type="textarea"></input>
-      <script>document.getElementById("message").focus();</script>
-      <input value="Send" type="submit"></input>
-    </form>
   </body>
+  <script>document.getElementById("message").focus();</script>
 </html>
