@@ -5,16 +5,21 @@
     <link rel="stylesheet" type="text/css" href="chat.css">
   </head>
   <body>
-    <div id="chat">
-      <div id="historyContainer">
-        <div id="history">
-        </div>
-      </div>
-      <form action="javascript:submitMessage()">
-        <div class="cell wide"><input id="message" type="text"></input></div>
-        <div class="cell"><input value="Send" type="submit"></input></div>
-      </form>
-    </div>
+    <table>
+      <tr>
+        <td colspan="2">
+          <div id="historyContainer">
+            <div id="history">
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <form action="javascript:submitMessage()">
+          <td style="width:100%"><textarea id="message" onkeypress="onMessageKey()"></textarea></td>
+          <td><input id="send" value="Send" type="submit"></td>
+        </form>
+      </tr>
   </body>
   <script>document.getElementById("message").focus();</script>
 </html>
