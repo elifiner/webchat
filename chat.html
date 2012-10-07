@@ -1,25 +1,19 @@
 <!doctype html>
 <html>
   <head>
+    <meta charset="UTF-8">
     <script type="text/javascript" src="chat.js"></script>
     <link rel="stylesheet" type="text/css" href="chat.css">
   </head>
   <body>
-    <table>
-      <tr>
-        <td colspan="2">
-          <div id="historyContainer">
-            <div id="history">
-            </div>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <form action="javascript:submitMessage()">
-          <td style="width:100%"><textarea id="message" onkeypress="onMessageKey()"></textarea></td>
-          <td><input id="send" value="Send" type="submit"></td>
-        </form>
-      </tr>
+    <div id="historyContainer">
+      <table id="history">
+      </table>
+    </div>
+    <form>
+      <textarea id="message" onkeypress="onMessageKey()"></textarea>
+    </form>
+    <p class="note">לחץ פעמיים על Enter בכדי לשלוח.</p>
   </body>
   <script>document.getElementById("message").focus();</script>
 </html>

@@ -2,7 +2,8 @@ function submitMessage() {
     var text = document.getElementById("message").value;
     var history = document.getElementById("history");
     var item = document.createElement("p");
-    item.innerHTML = text.replace(/\n/g, "<br>");
+    text = text.replace(/^\n*/, "").replace(/\n*$/, "").replace(/\n/g, "<br>");
+    item.innerHTML = "<strong>אני</strong>: " + text;
     history.appendChild(item);
     history.scrollTop = history.scrollHeight;
     document.getElementById("message").value = "";
@@ -13,20 +14,9 @@ function onMessageKey() {
     var key = window.event.keyCode;
     var text = document.getElementById("message").value;
     if (key === 13 && text.match(/\n$/)) {
-        submitMessage();
-        this.event.preventDefault();
-    }
-}
-
-var submitInterval = setInterval("autoSubmitMessage()", 1000);
-var submitTime = 0;
-
-function autoSubmitMessage() {
-    submitTime += 1;
-    if (submitTime > 2) {
-        submitTime = 0;
-        if (document.getElementById("message").value !== "") {
+        if (text.replace(/\n/g, "") !== "") {
             submitMessage();
         }
+        this.event.preventDefault();
     }
 }
