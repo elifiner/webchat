@@ -7,6 +7,8 @@ function submitMessage() {
     history.appendChild(item);
     history.scrollTop = history.scrollHeight;
     document.getElementById("message").value = "";
+    window.scrollTo(0, document.body.scrollHeight);
+    document.getElementById("message").focus();
 }
 
 function onMessageKey() {
